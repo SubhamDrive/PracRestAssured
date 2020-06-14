@@ -40,6 +40,16 @@ public class CheckStatusCode {
 
     }
 
+    @Test
+    public void getStatus()
+    {
+        RestAssured.baseURI = "http://restapi.demoqa.com/utilities/weather/city";
+        RequestSpecification httpRequest = RestAssured.given();
+        Response response = httpRequest.get("/Hyderabad");
+        String data = response.body().asString();
+        System.out.println(data);
+    }
+
 
 
 }
