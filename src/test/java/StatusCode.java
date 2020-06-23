@@ -9,8 +9,11 @@ public class StatusCode {
     @Test
     void validateStatusCodeAndStatusLine()
     {
+        //Specify base URI
         RestAssured.baseURI="http://restapi.demoqa.com/utilities/weather/city/";
+        //Request object
         RequestSpecification httpRequest = RestAssured.given();
+        //Response object
         Response response = httpRequest.get("/Hyderabad");
         int StatusCode = response.statusCode();
         Assert.assertEquals(StatusCode,200);
@@ -19,4 +22,5 @@ public class StatusCode {
         Assert.assertEquals(StatusLine,"HTTP/1.1 200 OK");
         System.out.println(StatusLine);
     }
+
 }
